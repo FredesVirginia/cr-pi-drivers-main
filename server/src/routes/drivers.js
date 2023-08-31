@@ -1,0 +1,156 @@
+const { Router } = require("express");
+const fs = require('fs');
+const path = require('path');
+const { Driver , Teams} =  require ("../db")
+const {Sequelize} = require('sequelize');
+const express = require ("express");
+
+const { app, readJsonFile , getAllDriver} = require('../utils/getApi');
+
+const router = express();
+
+router.use('/', app);
+
+router.get('/', async (req, res) => {
+  try {
+    const jsonData = await getAllDriver();
+    res.json(jsonData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+router.get("/nombre"  , async (req, res) =>{
+  try{
+    const {nombre } = req.body;
+    console.log("El nombre fue del driver "   , nombre);
+    const allDriver = await getAllDriver();
+    const someDriver = allDriver.find((driver) => driver.nombre == nombre);
+    if(!someDriver){
+      res.status(404).json({error: "No se econtro el Driver"});
+    }
+
+    res.status(200).json(someDriver);
+  }catch(error){
+    console.log("EL error en name fue " , error);
+    res.status(500).json(error);
+  }
+});
+
+router.get("/:id" , async(req, res)=>{
+  try{
+    const {id} = req.params;
+    console.log("EL id fue " , id);
+    const allDriver = await getAllDriver();
+    const response = allDriver.find((driver)=> driver.id == id);
+    console.log("El response id es " , response);
+    res.status(200).json(response);
+  }catch(error){
+    console.log("El error fue en get Id" , error);
+    res.status(500).json({error : error})
+  }
+});
+
+
+router.post("/crear" , async(req, res)=>{
+  try{
+    const { nombre , apellido, descripcion, imagen , nacionalidad, fechaNacimiento , teams } = req.body;
+    const nombreTeams = teams.split(',').map(nombreTeam => nombreTeam.trim());
+  
+    // Buscar los temas en la base de datos
+    const teamsEncontrados = await Teams.findAll({
+      where: { nombre: nombreTeams },
+    });
+
+    if (!teamsEncontrados.length) {
+      // Algunos temas no fueron encontrados, puede que haya errores en los nombres
+      return res.status(400).json({ error: "Algunos TEMAS no existen en la base de datos." });
+    }
+
+    // Crear el examen
+    const driver = await Driver.create({ nombre, apellido,descripcion,  imagen, nacionalidad, fechaNacimiento });
+
+    // Asociar el examen a los temas correspondientes
+    await driver.setTeams(teamsEncontrados);
+
+    // Obtener los temas asociados al examen
+    const temasAsociadosAlExamen = await driver.getTeams();
+  
+    
+
+    
+    let unDriver = await Driver.findAll({
+      include: 
+        {
+          model: Teams,
+          attributes: ['nombre'],
+          through: {
+            attributes: []
+          }
+  }});
+
+    res.status(200).json(unDriver);
+
+  }catch(error){
+    console.log("El error fue ", error)
+    res.status(500).send(error);
+  }
+});
+
+router.put("/editar/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log("El id del put es ", id);
+    
+    // Obtén el driver existente que deseas actualizar
+    const someDriver = await Driver.findByPk(id);
+
+    if (!someDriver) {
+      console.log("No se encontró el driver");
+      return res.status(404).json({ error: "No se encontró el driver" });
+    } else {
+      const { nombre, apellido, descripcion, imagen, nacionalidad, fechaNacimiento, teams } = req.body;
+      
+      // Actualiza los campos del driver
+      someDriver.nombre = nombre;
+      someDriver.apellido = apellido;
+      someDriver.descripcion = descripcion;
+      someDriver.imagen = imagen;
+      someDriver.nacionalidad = nacionalidad;
+      someDriver.fechaNacimiento = fechaNacimiento;
+
+      // Obtiene una lista de los nombres de los equipos enviados
+      const nombreEquipos = teams.split(',').map(nombreEquipo => nombreEquipo.trim());
+
+      // Encuentra los equipos en la base de datos
+      const equiposEncontrados = await Teams.findAll({
+        where: { nombre: nombreEquipos },
+      });
+
+      if (!equiposEncontrados.length) {
+        return res.status(400).json({ error: "Algunos equipos no existen en la base de datos." });
+      }
+
+      // Actualiza la asociación de equipos para el driver
+      await someDriver.setTeams(equiposEncontrados);
+
+      
+      console.log("El driver modificado es ", someDriver);
+      res.status(200).json(someDriver);
+    }
+  } catch (error) {
+    console.log("El error en el put fue ", error);
+    res.status(500).json({ error: error });
+  }
+});
+
+
+
+
+
+
+     
+
+      
+
+module.exports= router;
