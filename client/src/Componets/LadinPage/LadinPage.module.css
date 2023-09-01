@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Orbitron';
-    src: url('../../Fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    src: url('../../Font/Orbitron-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
   .lading{
     margin-top: -200px;
-    background: url("../../Img/f7.jpg") no-repeat center center fixed;
+    background: url("../../Img/f34.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   padding-top : 200px;

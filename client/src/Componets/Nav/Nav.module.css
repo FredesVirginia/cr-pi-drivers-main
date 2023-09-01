@@ -1,7 +1,17 @@
+@font-face {
+    font-family: 'Lexend Zetta';
+    src: url('../../Font/LexendZetta-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
 .divSearch{
-    background-color:darkred;
-    border-top: 9px solid black;
     
+  font-family: 'Lexend Zetta', sans-serif;
+    background-color:rgba(0, 0, 0, 0.368);
+    border-top: 9px solid black;
+    margin-top: -30px;
       display: flex;
       width: 100%;
       height: 20vh;
@@ -21,7 +31,7 @@
        text-decoration: none;
       padding-top: 28px;
        font-weight: 700;
-     
+       
   }
   
   .formLink:hover{
@@ -41,6 +51,7 @@
       text-align: center;
       width: 350px;
       padding-bottom: 10px;
+      margin-top: 60px;
   }
   .divTemperamentsSelect{
       height: 4vh;
@@ -59,7 +70,7 @@
       height: 4vh; 
       width: 30vh; 
       text-align: center;
-      margin-bottom: 80px;
+      margin-top: 20px;
   }
   
   .select{
@@ -85,7 +96,7 @@
   
   .breed{
       height: 4vh;
-      width: 40vh;
+      width: 60vh;
       text-align: center;
   }
   
@@ -106,6 +117,7 @@
       flex-direction: column;
       text-align: center;
       justify-content: center;
+      align-items: center;
      padding-left: 30px;
      padding-top: 40px;
      margin-left: 300px;
@@ -115,7 +127,7 @@
       height: 4vh;
       width: 18vh;
       text-align: center;
-     margin-left: 90px;
+    
      margin-top:10px
   }
   
