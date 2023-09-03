@@ -29,7 +29,7 @@ router.get("/nombre"  , async (req, res) =>{
       const response= await getAllDriver();
       const query = nombre.toLowerCase();
       const responseName = response.filter((element) =>{
-            if(element.nombre.toLowerCase().includes(query)){
+            if(element.nombreCompleto.toLowerCase().includes(query)){
                 return element;
             }
         });
