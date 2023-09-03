@@ -15,6 +15,22 @@ import axios from "axios";
         }
     }
 
+    export function getForNameDrivers(nombre){
+        return async function (dispatch){
+            try{
+                console.log("El nombre desde action name es " , nombre);
+                const allDrivers = await axios.get(`http://localhost:3001/drivers/nombre/?nombre=${nombre}` );
+                return dispatch ({
+                    type: "GET_FOR_NAME_DRIVERS",
+                    payload: allDrivers.data
+                })
+                
+            }catch(error){
+                console.log("Error desde action NAME", error);
+            }
+        }
+    }
+
    
 
     export function getAllTeams(){

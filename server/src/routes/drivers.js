@@ -7,6 +7,7 @@ const express = require ("express");
 
 const { app, readJsonFile , getAllDriver} = require('../utils/getApi');
 
+
 const router = express();
 
 router.use('/', app);
@@ -21,20 +22,29 @@ router.get('/', async (req, res) => {
   }
 });
 router.get("/nombre"  , async (req, res) =>{
-  try{
-    const {nombre } = req.body;
-    console.log("El nombre fue del driver "   , nombre);
-    const allDriver = await getAllDriver();
-    const someDriver = allDriver.find((driver) => driver.nombre == nombre);
-    if(!someDriver){
-      res.status(404).json({error: "No se econtro el Driver"});
-    }
-
-    res.status(200).json(someDriver);
-  }catch(error){
-    console.log("EL error en name fue " , error);
-    res.status(500).json(error);
-  }
+  const {nombre} =req.query;
+  console.log("El nombre desde el back fue " , nombre);
+  try{ 
+    
+      const response= await getAllDriver();
+      const query = nombre.toLowerCase();
+      const responseName = response.filter((element) =>{
+            if(element.nombre.toLowerCase().includes(query)){
+                return element;
+            }
+        });
+      if(responseName){
+        res.status(200).json(responseName);
+      }else{
+        res.status(404).send("NO se encontro el nombre");
+      }
+        
+   
+    
+}catch(error){
+  console.log("El error desde la back name fue " , error);
+    res.status(404).json(error);
+}
 });
 
 router.get("/:id" , async(req, res)=>{

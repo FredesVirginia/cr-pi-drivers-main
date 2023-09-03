@@ -4,6 +4,7 @@ import Driver from "./Driver";
 import { getAllDrivers } from '../../Redux/actions';
 import  {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import Loading from '../Loading/Loading';
 import styles from "./DriverContainer.module.css";
 
 
@@ -24,7 +25,7 @@ const DriverContainer = () => {
 
     console.log("Los driver son ", allDriver.length);
     return (
-        <div className={styles.main} >
+        <div  >
             <Nav/>
            
             <div className={styles.containerDriver} >
@@ -40,7 +41,7 @@ const DriverContainer = () => {
 
                             />
                 )
-            }) : (<div>Cargando</div>)}
+            }) : (<Loading/>)}
             </div>
         </div>
     );

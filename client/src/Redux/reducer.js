@@ -28,6 +28,13 @@ export default function reducer( state = initialState, action){
                 }
             }
 
+            case "GET_FOR_NAME_DRIVERS" : {
+                return {
+                    ...state,
+                    drivers: action.payload
+                }
+            }
+
 
           
 
