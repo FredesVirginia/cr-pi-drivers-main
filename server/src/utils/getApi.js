@@ -59,7 +59,7 @@ async function readBBDD (){
                createBBDD: d.createBBDD,
                teams: d.Teams.map((team) => {
                  return  team.nombre;
-                 }).join(" ,"),
+                 }).join(" , "),
    
         } });
    

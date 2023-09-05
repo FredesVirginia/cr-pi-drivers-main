@@ -31,6 +31,25 @@ import axios from "axios";
         }
     }
 
+    export function createDriver(driver){
+        return async function (dispatch){
+            try{
+                console.log("El nombre desde action name es " , driver);
+                const allDrivers = await axios.post(`http://localhost:3001/drivers/crear` , driver );
+               console.log("La respuesta desde l back fue" , allDrivers.data);
+                return dispatch ({
+                    type: "CREATE_DRIVER",
+                   
+                })
+                
+            }catch(error){
+                console.log("Error desde action NAME", error);
+            }
+        }
+    }
+
+
+
    
 
     export function getAllTeams(){
@@ -56,7 +75,7 @@ import axios from "axios";
             const response = await axios.get("http://localhost:3001/drivers/");
             const responseTeams = response.data.filter((driver) =>{
                 //aqui en el split, no se por que pero es necesario poner la coma come esta ahi
-                return driver.teams && driver.teams.split(", ").includes(team);
+                return driver.teams && driver.teams.split(" , ").includes(team);
             })
 
              return dispatch({

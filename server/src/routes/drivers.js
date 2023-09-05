@@ -77,8 +77,9 @@ router.post("/crear" , async(req, res)=>{
       return res.status(400).json({ error: "Algunos TEMAS no existen en la base de datos." });
     }
 
+    let img = "jbhjbj";
     // Crear el examen
-    const driver = await Driver.create({ nombre, apellido,descripcion,  imagen, nacionalidad, fechaNacimiento });
+    const driver = await Driver.create({ nombre, apellido,descripcion,  img, nacionalidad, fechaNacimiento });
 
     // Asociar el examen a los temas correspondientes
     await driver.setTeams(teamsEncontrados);

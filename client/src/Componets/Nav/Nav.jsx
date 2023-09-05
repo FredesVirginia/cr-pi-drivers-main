@@ -82,7 +82,7 @@ const Nav = () => {
             </div>
 
             <div className={styles.divCreate}>
-            <Link  className={styles.breed}  to="/createVideogame"> Crear corredor</Link>
+            <Link  className={styles.breed}  to="/createDriver"> Crear corredor</Link>
             <label> Ordenar por </label>
             <select  className={styles.order}  >
               <option value="inicio">--Seleccione--</option>

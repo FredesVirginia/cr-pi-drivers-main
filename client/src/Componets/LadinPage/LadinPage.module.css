@@ -6,7 +6,7 @@
   }
 
   .lading{
-    margin-top: -200px;
+    padding: auto;
     background: url("../../Img/f34.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -28,10 +28,7 @@
 
 
 
-h1 {
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
-}
+
 
 .container{
     display: flex;
@@ -41,6 +38,7 @@ h1 {
   text-align: center;
   flex-direction: column;
   margin-top: 200px;
+
   
  
 }
@@ -92,7 +90,7 @@ h1 {
 
 
 
-h2{
+.h2{
     background-color: black;
     color:aliceblue;
     width: 300px;
@@ -102,7 +100,7 @@ h2{
 }
 
 
-p{
+.p{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 26px;
   background-color: rgba(0, 0, 0, 0.784);

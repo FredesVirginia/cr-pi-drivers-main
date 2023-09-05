@@ -28,6 +28,12 @@ export default function reducer( state = initialState, action){
                 }
             }
 
+            case  "CREATE_DRIVER" : {
+                return {
+                    ...state
+                }
+            }
+
             case "GET_FOR_NAME_DRIVERS" : {
                 return {
                     ...state,
