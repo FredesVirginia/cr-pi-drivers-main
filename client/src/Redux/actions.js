@@ -108,13 +108,13 @@ import axios from "axios";
         }
     }
 
-    export function menorEdad(drivers ){
+    export function menorEdad( ){
         return function (dispatch){
            
-                const result = [...drivers].sort((a , b) => new Date(a.fechaNacimiento).getTime() - new Date(b.fechaNacimiento).getTime()) ;
+              
             return dispatch( {
                 type:  "MENOR_EDAD",
-                payload : result
+              
             })
         }
     }

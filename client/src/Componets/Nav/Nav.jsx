@@ -40,6 +40,9 @@ const Nav = () => {
       }, [dispatch]);
 
       useEffect(() => {
+        if (order === "inicio"){
+          dispatch(getAllDrivers());
+        }
         if(order ==="ascFechaNacimiento"){
             dispatch(mayorEdad())
         }
@@ -100,6 +103,7 @@ const Nav = () => {
             <label> Ordenar por </label>
             <select  className={styles.order} onChange={ (e) => setOrder(e.target.value) }  >
               <option value="inicio">--Seleccione--</option>
+              <option  value="inicio">--INICIO--</option>
               <option value = "desFechaNacimiento"  >Menor Edad</option>
               <option value = "ascFechaNacimiento" >Mayor Edad</option>
               <option value = "driverApi" >Corredores Api</option>

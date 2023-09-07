@@ -78,9 +78,9 @@ export default function reducer( state = initialState, action){
 
             case "MAYOR_EDAD" : {
                 return {
-                ...state,
-                actualPage:1,
-                drivers: state.drivers.slice().sort(edadMax)
+                    ...state,
+                    actualPage:1,
+                    drivers: state.drivers.slice().sort(edadMax)
                 }
             }
 
