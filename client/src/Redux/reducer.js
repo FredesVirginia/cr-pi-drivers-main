@@ -1,6 +1,12 @@
+import { edadMax } from "../Order/order";
+import { edadMin } from "./reducer";
+
+export { edadMin , edadMax} from "../Order/order";
+
 const initialState = {
     drivers: [],
     teams : [], 
+    driverId: {},
     
 }
 
@@ -11,6 +17,14 @@ export default function reducer( state = initialState, action){
                     ...state,
                   
                     drivers: action.payload
+                }
+            }
+
+            case "GET_DRIVER_FOR_ID" : {
+                return {
+                    ...state,
+                  
+                    driverId: action.payload
                 }
             }
 
@@ -38,6 +52,22 @@ export default function reducer( state = initialState, action){
                 return {
                     ...state,
                     drivers: action.payload
+                }
+            }
+
+            case "MENOR_EDAD" : {
+               
+                return {
+                    ...state ,
+                    drivers : action.payload
+                }
+            
+            }
+
+            case "MAYOR_EDAD" : {
+                return {
+                ...state,
+                drivers: state.drivers.slice().sort(edadMax)
                 }
             }
 

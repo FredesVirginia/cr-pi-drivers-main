@@ -105,6 +105,31 @@ h1{
     
 }
 
+.shine {
+  font-size: 48px;
+  color: #fff; /* Color del texto */
+  text-shadow: -10px -10px 0 #fff, 10px 10px 0 #fff, -10px 10px 0 #fff, 10px -10px 0 #fff; /* Sombras para simular la "luz" */
+  animation: shine-animation 2s linear infinite; /* Animación */
+}
+
+@keyframes shine-animation {
+  0% {
+    text-shadow: -10px -10px 0 #fff, 10px 10px 0 #fff, -10px 10px 0 #fff, 10px -10px 0 #fff; /* Sombras iniciales */
+  }
+  25% {
+    text-shadow: 10px 10px 30px #fff, -10px -10px 30px #fff, 10px -10px 30px #fff, -10px 10px 30px #fff; /* Sombras a la derecha */
+  }
+  50% {
+    text-shadow: -10px -10px 0 #fff, 10px 10px 0 #fff, -10px 10px 0 #fff, 10px -10px 0 #fff; /* Sombras originales */
+  }
+  75% {
+    text-shadow: -10px 10px 30px #fff, 10px -10px 30px #fff, -10px -10px 30px #fff, 10px 10px 30px #fff; /* Sombras a la izquierda */
+  }
+  100% {
+    text-shadow: -10px -10px 0 #fff, 10px 10px 0 #fff, -10px 10px 0 #fff, 10px -10px 0 #fff; /* Sombras originales */
+  }
+}
+
 @font-face {
     font-family: 'SpaceMono';
     src: url('../../Font/SpaceMono-Regular.ttf') format('truetype');

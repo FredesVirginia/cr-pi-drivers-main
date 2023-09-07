@@ -1,6 +1,6 @@
 import React  , {useState, useRef, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import { getAllTeams , getDriverforTeams , getAllDrivers , getForNameDrivers} from "../../Redux/actions";
+import { getAllTeams , getDriverforTeams , getAllDrivers , getForNameDrivers , menorEdad , mayorEdad} from "../../Redux/actions";
 
 import styles from "./Nav.module.css";
 import {Link} from "react-router-dom";
@@ -8,10 +8,12 @@ import {Link} from "react-router-dom";
 const Nav = () => {
  const dispatch = useDispatch();
  const allTeams = useSelector( state => state.teams);
+ const allDrivers = useSelector (state => state.drivers);
  const [teams , setTeams] = useState(" ");
  const [cambio , setCambio] = useState(" ");
  const [nombre , setNombre] = useState("");
- console.log("Los teams son " , allTeams.length);
+  const [order, setOrder] = useState(" ");
+
   
  useEffect(() => {
   const fetchData = async () => {
@@ -34,7 +36,19 @@ const Nav = () => {
         
           // Aquí puedes enviar toda la información al componente
         dispatch(getAllTeams());
+      
       }, [dispatch]);
+
+      useEffect(() => {
+        if(order ==="ascFechaNacimiento"){
+            dispatch(mayorEdad())
+        }
+        if(order === "desFechaNacimiento"){
+          dispatch(menorEdad(allDrivers))
+        }
+
+        
+     }, [dispatch , order , allDrivers]);
 
 
         function handleChange(e){
@@ -84,12 +98,12 @@ const Nav = () => {
             <div className={styles.divCreate}>
             <Link  className={styles.breed}  to="/createDriver"> Crear corredor</Link>
             <label> Ordenar por </label>
-            <select  className={styles.order}  >
+            <select  className={styles.order} onChange={ (e) => setOrder(e.target.value) }  >
               <option value="inicio">--Seleccione--</option>
-              <option value = "asc"  >A-Z</option>
-              <option value = "dess" >Z-A</option>
-              <option value = "gameApi" >Corredores Api</option>
-              <option value = "gameBBDD" >Corredores BBDD</option>
+              <option value = "desFechaNacimiento"  >Menor Edad</option>
+              <option value = "ascFechaNacimiento" >Mayor Edad</option>
+              <option value = "driverApi" >Corredores Api</option>
+              <option value = "driverBBDD" >Corredores BBDD</option>
              
              
             </select>

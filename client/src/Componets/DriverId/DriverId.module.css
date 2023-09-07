@@ -1,0 +1,103 @@
+.containerD{
+    height : 240vh;
+    background-color: black;
+    background: url("../../Img/f14.jpg") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+
+.id{
+    color: white;
+    width: 60vw;
+   background-color: rgba(0, 0, 0, 0.879);
+   margin-left: 400px;
+    display: flex;
+    padding: 20px 20px;
+}
+
+.des{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.desPi{
+    background-color: darkslategrey;
+    color : white;
+ 
+  font-weight: 900;
+}
+
+.des p{
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.img {
+    width: 500px;
+    height: 600px;
+    margin-right: 30px;
+}
+
+
+.containerD nav{
+    background-color: black;
+    height: 10vh;
+    margin-bottom: 60px;
+    display : flex;
+    justify-content: flex-end;
+
+}
+
+
+.waveAnimation {
+    animation: wave 2s infinite; /* Duración y repetición de la animación */
+    text-align: center;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0); /* Estado inicial y final, no hay movimiento vertical */
+    }
+    50% {
+      transform: translateY(-10px); /* Punto medio, eleva el texto */
+    }
+  }
+
+.dh1{
+    background-color: black;
+    width: 30vw;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-shadow: 20px 20px 20px rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+   
+}
+
+.containerD h1 {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.864);
+    color:white;
+    text-align: center;
+    
+   
+}
+
+.liik{
+    color:white;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 30px 10px;
+    margin-right: 60px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.liik:hover{
+    text-decoration: double;
+    color:orange;
+}

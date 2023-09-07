@@ -169,7 +169,7 @@ const Form = () => {
          <Link  className={styles.liik} to="/drivers"> Volver a Inicio </Link>
          </nav>
            <form  className={styles.form} action="" onSubmit={(e) => submitForm(e)}>
-            <h1>Creacion de Driver</h1>
+            <h1  className = {styles.shine}>Creacion de Driver</h1>
               <div className={styles.div1}>
                 <div className={styles.inputGroup}>
                 <input

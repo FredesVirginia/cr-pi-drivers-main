@@ -48,6 +48,20 @@ import axios from "axios";
         }
     }
 
+    export function getDriverForID(id){
+        return async function (dispatch){
+            try{
+                const response = await axios.get(`http://localhost:3001/drivers/${id}`);
+                console.log("La respueta desde action ID es " , response.data);
+                 dispatch({
+                        type: "GET_DRIVER_FOR_ID",
+                        payload : response.data
+                })
+            }catch(error){
+                console.log("Eoor desde action id", error);
+            }
+        }
+    }
 
 
    
@@ -86,5 +100,24 @@ import axios from "axios";
             console.log("Onfroma de errores desde action getGameforGenres" , error);
            }
 
+        }
+    }
+
+    export function menorEdad(drivers ){
+        return function (dispatch){
+           
+                const result = [...drivers].sort((a , b) => new Date(a.fechaNacimiento).getTime() - new Date(b.fechaNacimiento).getTime()) ;
+            return dispatch( {
+                type:  "MENOR_EDAD",
+                payload : result
+            })
+        }
+    }
+
+    export function mayorEdad(){
+        return function (dispatch){
+            return dispatch( {
+                type: "MAYOR_EDAD"
+            })
         }
     }
