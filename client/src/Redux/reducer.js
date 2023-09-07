@@ -1,5 +1,5 @@
-import { edadMax } from "../Order/order";
-import { edadMin } from "./reducer";
+import { edadMax ,  edadMin } from "../Order/order";
+
 
 export { edadMin , edadMax} from "../Order/order";
 
@@ -7,15 +7,22 @@ const initialState = {
     drivers: [],
     teams : [], 
     driverId: {},
+    actualPage: 1
     
 }
 
 export default function reducer( state = initialState, action){
         switch(action.type){
+
+            case "CHANGE_PAGE":
+                return {
+                    ...state, 
+                    actualPage: action.payload
+                } 
             case "GET_ALL_DRIVERS" : {
                 return {
                     ...state,
-                  
+                    actualPage:1,
                     drivers: action.payload
                 }
             }
@@ -23,7 +30,7 @@ export default function reducer( state = initialState, action){
             case "GET_DRIVER_FOR_ID" : {
                 return {
                     ...state,
-                  
+                    actualPage:1,
                     driverId: action.payload
                 }
             }
@@ -31,6 +38,7 @@ export default function reducer( state = initialState, action){
             case "GET_ALL_TEAMS" : {
                 return {
                     ...state,
+                    actualPage:1,
                     teams : action.payload
                 }
             }
@@ -38,19 +46,22 @@ export default function reducer( state = initialState, action){
             case "GET_DRIVER_FOR_TEAMS" : {
                 return {
                     ...state,
+                    actualPage:1,
                     drivers: action.payload
                 }
             }
 
             case  "CREATE_DRIVER" : {
                 return {
-                    ...state
+                    ...state,
+                    actualPage:1,
                 }
             }
 
             case "GET_FOR_NAME_DRIVERS" : {
                 return {
                     ...state,
+                    actualPage:1,
                     drivers: action.payload
                 }
             }
@@ -59,7 +70,8 @@ export default function reducer( state = initialState, action){
                
                 return {
                     ...state ,
-                    drivers : action.payload
+                    actualPage:1,
+                    drivers :state.drivers.slice().sort(edadMin)
                 }
             
             }
@@ -67,6 +79,7 @@ export default function reducer( state = initialState, action){
             case "MAYOR_EDAD" : {
                 return {
                 ...state,
+                actualPage:1,
                 drivers: state.drivers.slice().sort(edadMax)
                 }
             }

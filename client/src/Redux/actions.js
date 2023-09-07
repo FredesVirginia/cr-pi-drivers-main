@@ -81,7 +81,12 @@ import axios from "axios";
         }
     }
 
-
+    export function changePage(page){
+        return {
+            type: "CHANGE_PAGE",
+            payload : page
+        }
+    }
 
     export function getDriverforTeams(team){
         return async function (dispatch){
