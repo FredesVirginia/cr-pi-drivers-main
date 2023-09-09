@@ -145,7 +145,7 @@ router.put("/editar/:id", async (req, res) => {
       // Actualiza la asociación de equipos para el driver
       await someDriver.setTeams(equiposEncontrados);
 
-      
+      await someDriver.save();
       console.log("El driver modificado es ", someDriver);
       res.status(200).json(someDriver);
     }
