@@ -63,6 +63,22 @@ import axios from "axios";
         }
     }
 
+    export function updateDriver (id , driver){
+        return async function (dispatch){
+            try{
+                console.log("EL driver dese action put es ", driver)
+                const reqs = await axios.put(`http://localhost:3001/drivers/editar/${id}`,driver);
+                console.log("EL driver ACTUALIZADO" , reqs)
+                return dispatch ({
+                    type : "UPDATE_DRIVER"
+                })
+            }catch(error){
+                console.log("Error de sde action put", error);
+                return error;
+            }
+        }
+    }
+
 
    
 

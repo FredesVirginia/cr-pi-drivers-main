@@ -66,6 +66,13 @@ export default function reducer( state = initialState, action){
                 }
             }
 
+            case "UPDATE_DRIVER": {
+                return {
+                    ...state,
+                    actualPage:1,
+                }
+            }
+
             case "MENOR_EDAD" : {
                
                 return {
