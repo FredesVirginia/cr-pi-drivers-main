@@ -3,7 +3,7 @@
 
     
   
-    height: 70vh;
+    height: 90vh;
     width: 40vh;
     text-align: center;
     display: flex;
@@ -12,9 +12,42 @@
     align-items: center;
 
      color: white;
+     padding-bottom: 20px;
   
      
 }
+
+.cerrar{
+    background-color: blue;
+    width: 30px;
+    margin-left: 80px;
+    }
+
+    .button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .button:hover{
+        
+         animation: pulse 1s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0% {
+          background-color: #4CAF50;
+        }
+        50% {
+          background-color: #8BC34A;
+        }
+        100% {
+          background-color: #4CAF50;
+        }
+      } 
 
 .id{
     color:blue
@@ -102,4 +135,5 @@
     padding: 10px 10px;
     font-size: 20px;
     font-weight: 700;
+    margin-bottom: 20px;
 }

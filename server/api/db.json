@@ -373,7 +373,7 @@
         "dob": "1980-08-06",
         "nationality": "Italian",
         "url": "http://en.wikipedia.org/wiki/Vitantonio_Liuzzi",
-        "teams": "McLaren,Benetton, Williams, Joest Racing, Peugeot"
+        "teams": "McLaren, Benetton, Williams, Joest Racing, Peugeot"
       },
       {
         "id": 25,
@@ -388,7 +388,7 @@
         "dob": "1974-02-15",
         "nationality": "Austrian",
         "url": "http://en.wikipedia.org/wiki/Alexander_Wurz",
-        "teams": "Benetton,McLaren,Williams"
+        "teams": "Benetton, McLaren, Williams"
       },
       {
         "id": 26,
@@ -418,7 +418,7 @@
         "dob": "1979-04-16",
         "nationality": "Dutch",
         "url": "http://en.wikipedia.org/wiki/Christijan_Albers",
-        "teams": "Minardi,Midland,Spyker"
+        "teams": "Minardi, Midland, Spyker"
       },
       {
         "id": 28,
@@ -448,7 +448,7 @@
         "dob": "1982-07-09",
         "nationality": "Japanese",
         "url": "http://en.wikipedia.org/wiki/Sakon_Yamamoto",
-        "teams": "Super Aguri,Spyker,Hispania"
+        "teams": "Super Aguri, Spyker, Hispania"
       },
       {
         "id": 30,
@@ -493,7 +493,7 @@
         "dob": "1983-02-07",
         "nationality": "Austrian",
         "url": "http://en.wikipedia.org/wiki/Christian_Klien",
-        "teams": "Jaguar,Red Bull,HRT"
+        "teams": "Jaguar, Red Bull, HRT"
       },
       {
         "id": 33,
@@ -508,7 +508,7 @@
         "dob": "1976-07-24",
         "nationality": "Portuguese",
         "url": "http://en.wikipedia.org/wiki/Tiago_Monteiro",
-        "teams": "Jordan,Midland"
+        "teams": "Jordan, Midland"
       },
       {
         "id": 34,
@@ -538,7 +538,7 @@
         "dob": "1971-04-09",
         "nationality": "Canadian",
         "url": "http://en.wikipedia.org/wiki/Jacques_Villeneuve",
-        "teams": "Williams,BAR,Renault,Sauber,BMW Sauber"
+        "teams": "Williams, BAR, Renault, Sauber, BMW Sauber"
       },
       {
         "id": 36,
@@ -553,7 +553,7 @@
         "dob": "1978-01-05",
         "nationality": "French",
         "url": "http://en.wikipedia.org/wiki/Franck_Montagny",
-        "teams": "Courage Compétition,DAMS,Team Oreca, Pescarolo Sport,Peugeot Total"
+        "teams": "Courage Compétition, DAMS, Team Oreca, Pescarolo Sport, Peugeot Total"
       },
       {
         "id": 37,
@@ -568,7 +568,7 @@
         "dob": "1971-02-24",
         "nationality": "Spanish",
         "url": "http://en.wikipedia.org/wiki/Pedro_de_la_Rosa",
-        "teams": "Arrows,Jaguar,McLaren, Sauber, HRT"
+        "teams": "Arrows, Jaguar ,McLaren, Sauber, HRT"
       },
       {
         "id": 38,
@@ -583,7 +583,7 @@
         "dob": "1981-09-23",
         "nationality": "Dutch",
         "url": "http://en.wikipedia.org/wiki/Robert_Doornbos",
-        "teams": "Minardi,Red Bull"
+        "teams": "Minardi , Red Bull"
       },
       {
         "id": 39,
@@ -598,7 +598,7 @@
         "dob": "1977-01-14",
         "nationality": "Indian",
         "url": "http://en.wikipedia.org/wiki/Narain_Karthikeyan",
-        "teams": "Jordan,HRT"
+        "teams": "Jordan, HRT"
       },
       {
         "id": 40,
@@ -628,7 +628,7 @@
         "dob": "1976-03-23",
         "nationality": "Brazilian",
         "url": "http://en.wikipedia.org/wiki/Ricardo_Zonta",
-        "teams": "BAR,Jordan,Toyota"
+        "teams": "BAR, Jordan, Toyota"
       },
       {
         "id": 42,
@@ -643,7 +643,7 @@
         "dob": "1980-09-11",
         "nationality": "Brazilian",
         "url": "http://en.wikipedia.org/wiki/Ant%C3%B4nio_Pizzonia",
-        "teams": "Jaguar,Williams"
+        "teams": "Jaguar, Williams"
       },
       {
         "id": 43,
@@ -673,7 +673,7 @@
         "dob": "1966-09-02",
         "nationality": "French",
         "url": "http://en.wikipedia.org/wiki/Olivier_Panis",
-        "teams": "Ligier,Prost,BAR,Toyota"
+        "teams": "Ligier, Prost, BAR, Toyota"
       },
       {
         "id": 45,
@@ -718,7 +718,7 @@
         "dob": "1981-01-01",
         "nationality": "Hungarian",
         "url": "http://en.wikipedia.org/wiki/Zsolt_Baumgartner",
-        "teams": "Jordan,Minardi"
+        "teams": "Jordan, Minardi"
       },
       {
         "id": 48,
@@ -748,7 +748,7 @@
         "dob": "1967-05-18",
         "nationality": "German",
         "url": "http://en.wikipedia.org/wiki/Heinz-Harald_Frentzen",
-        "teams": "Sauber,Williams, Jordan,Prost,Arrows"
+        "teams": "Sauber, Williams, Jordan, Prost, Arrows"
       },
       {
         "id": 50,
@@ -763,7 +763,7 @@
         "dob": "1972-03-04",
         "nationality": "Dutch",
         "url": "http://en.wikipedia.org/wiki/Jos_Verstappen",
-        "teams": "Benetton,Simtek,Footwork,Tyrrell,Stewart,Arrows,Minardi"
+        "teams": "Benetton, Simtek, Footwork, Tyrrell, Stewart, Arrows, Minardi"
       },
       {
         "id": 51,
@@ -808,7 +808,7 @@
         "dob": "1978-03-03",
         "nationality": "Danish",
         "url": "http://en.wikipedia.org/wiki/Nicolas_Kiesa",
-        "teams": "Minardi,Jordan"
+        "teams": "Minardi, Jordan"
       },
       {
         "id": 54,

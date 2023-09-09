@@ -77,7 +77,7 @@ router.post("/crear" , async(req, res)=>{
       return res.status(400).json({ error: "Algunos TEMAS no existen en la base de datos." });
     }
 
-    let img = "jbhjbj";
+    let img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf5ZMbjfXHe6oxIvGejyVSkjYrPZehfMVTPxTQycgs-8ZiWiumHH5L6PA7ULosAK9iR5I&usqp=CAU";
     // Crear el examen
     const driver = await Driver.create({ nombre, apellido,descripcion,  img, nacionalidad, fechaNacimiento });
 

@@ -94,7 +94,7 @@ import axios from "axios";
             const response = await axios.get("http://localhost:3001/drivers/");
             const responseTeams = response.data.filter((driver) =>{
                 //aqui en el split, no se por que pero es necesario poner la coma come esta ahi
-                return driver.teams && driver.teams.split(" , ").includes(team);
+                return driver.teams && driver.teams.split(", ").includes(team);
             })
 
              return dispatch({

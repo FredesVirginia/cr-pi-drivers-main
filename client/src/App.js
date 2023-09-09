@@ -4,6 +4,7 @@ import LadinPage from "./Componets/LadinPage/LadinPage";
 import DriverContainer from "./Componets/Home/DriverContainer";
 import DriverId from "./Componets/DriverId/DriverId";
 import Form from "./Componets/CreateDriver/Form";
+import UpdateDriver from './Componets/UpdateDriver/UpdateDriver';
 import "./App.css";
 const App = () => {
     return (
@@ -13,7 +14,8 @@ const App = () => {
       <Route exact path='/drivers' component={DriverContainer}/>
       <Route exact path='/createDriver' component={Form}/>
       <Route exact path='/drivers/:id' component={DriverId}/>
-
+      <Route exact path='/drivers/editar/:id' component={UpdateDriver}/>
+        
       </BrowserRouter>
         </div>
     );
