@@ -100,17 +100,21 @@ const Nav = () => {
 
             <div className={styles.divCreate}>
             <Link  className={styles.breed}  to="/createDriver"> Crear corredor</Link>
-            <label> Ordenar por </label>
-            <select  className={styles.order} onChange={ (e) => setOrder(e.target.value) }  >
-              <option value="inicio">--Seleccione--</option>
-              <option  value="inicio">--INICIO--</option>
-              <option value = "desFechaNacimiento"  >Menor Edad</option>
-              <option value = "ascFechaNacimiento" >Mayor Edad</option>
-              <option value = "driverApi" >Corredores Api</option>
-              <option value = "driverBBDD" >Corredores BBDD</option>
-             
-             
-            </select>
+                <div className={styles.divOr} >
+                 <h3>Ordenar</h3>
+                      <select  className={styles.order} onChange={ (e) => setOrder(e.target.value) }  >
+                        <option value="inicio">--Seleccione--</option>
+                        <option  value="inicio">--INICIO--</option>
+                        <option value = "desFechaNacimiento"  >Menor Edad</option>
+                        <option value = "ascFechaNacimiento" >Mayor Edad</option>
+                        <option value = "driverApi" >Corredores Api</option>
+                        <option value = "driverBBDD" >Corredores BBDD</option>
+                      
+                      
+                      </select>
+                </div>
+              
+
             </div>
           
          </div>

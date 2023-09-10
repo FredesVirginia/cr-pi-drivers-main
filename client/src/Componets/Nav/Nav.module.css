@@ -10,13 +10,10 @@
     
   font-family: 'Lexend Zetta', sans-serif;
     background-color: black;
-    border-top: 9px solid black;
-    margin-top: -30px;
+  
+    color:white;
       display: flex;
-      justify-content: space-around;
-      width: 100%;
-      height: 22vh;
-      color:white;
+    
       
   }
   
@@ -48,11 +45,11 @@
       justify-content: end;
       font-size: 20px;
       font-weight: 700;
-      margin-left: 40px;
+      margin-left: 190px;
       text-align: center;
       width: 350px;
       padding-bottom: 10px;
-      margin-top: 60px;
+     
   }
   .divTemperamentsSelect{
       height: 4vh;
@@ -99,29 +96,43 @@
       height: 6vh;
       width: 60vh;
       text-align: center;
+    
   }
   
   .divBreed{
      
       width: 50vh;
      text-align: center;
-      font-size: 22px;
+    
       padding-bottom: 60px;
       margin-left: 280px;
       padding-top: 50px;
   }
   
   .divCreate{
-      
-      width: 40vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-     padding-left: 30px;
-     padding-top: 40px;
-     margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+    font-weight: 700;
+    margin-left: 130px;
+    
+    text-align: center;
+    width: 350px;
+    padding-bottom: 60px;
+   
+  }
+
+  .divOr{
+    display: flex;
+    margin-left: 210px;
+    margin-top: -40px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divOr h3 {
+    margin-right: 20px;
   }
   
   .order{
@@ -134,7 +145,7 @@
   
   .breed{
       text-decoration: none;
-      font-size: 22px;
+      font-size: 20px;
       color: white;
       font-weight: 700;
       

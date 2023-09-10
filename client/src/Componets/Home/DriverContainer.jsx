@@ -26,9 +26,10 @@ const DriverContainer = () => {
 
     console.log("Los driver son ", allDriver.length);
     return (
-        <div  >
+        
+
+        <div className={styles.divo} >
             <Nav/>
-           
             <div className={styles.containerDriver} >
             {allDriver.length > 0 ? allDriver.map((driver, index) =>{
 // Se crea un CardCountry por cada country en el state. Si es la pagina 1, solo muestra 9 countries
@@ -57,11 +58,17 @@ else if(actualPage !== 1 && index >= ((actualPage-1)*9)-1 && (index < (actualPag
 
                             />)
               }
-             }): (<Loading/>)}
+             }): <h1> Cargando</h1>}
             </div>
-            <div>
-             <Paginator driverLenght={allDriver.length}/>
+
+
+
+             <div className={styles.divP}>
+                    <Paginator driverLenght={allDriver.length}/>
              </div>
+           
+           
+           
         </div>
     );
 }

@@ -9,7 +9,7 @@
     padding: auto;
     background: url("../../Img/f34.jpg") no-repeat center center fixed;
   background-size: cover;
-  height: 250vh;
+  height: 100vh;
  
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 100px;
 
   
  

@@ -1,15 +1,24 @@
 
 
 
+.divP{
+    width: 99%;
+    background-color: black;
+    padding-left: 14px;
+}
+
 .containerDriver{
     margin:auto;
-    background: url("../../Img/f34.jpg") no-repeat center center fixed;
-    background-size: cover;
+ 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    background: url("../../Img/f34.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 300vh;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px; /* Espacio entre los divs */
     padding: 30px;
-    padding-left: 90px;
+    padding-left: 280px;
+    margin-right: 0px;
 }
   
 
