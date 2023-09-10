@@ -17,34 +17,34 @@ const DriverId = () => {
 
     
     return (
-        <div className = {styles.containerD}>
-           <nav> 
-           <Link  className={styles.liik} to="/drivers"> Volver a Inicio </Link>
-         </nav>
-        {driverDetail.nombre ? (
-            <div className={styles.id}>
-                <div>
-                    <img alt={driverDetail.nombre} src={driverDetail.imagen} className={styles.img} />
-                </div>
-                <div className= {styles.des}>
-                    <h2>{driverDetail.nombre} {driverDetail.apellido}  </h2>
-                    <p className= {styles.desPi}>Fecha de Nacimiento</p>
-                    <p> {driverDetail.fechaNacimiento}</p>
-                    <p className= {styles.desPi}> Nacionalidad</p>
-                    <p> {driverDetail.nacionalidad}</p>
-                    <p className= {styles.desPi}> Descripcion</p>
-                    <p> {driverDetail.descripcion}</p>
-                    <p className= {styles.desPi}> Equipos</p>
-                    <p> {driverDetail.teams }</p>
-
-                </div>
+        <div className={styles.containerD}>
+    <nav>
+        <Link className={styles.liik} to="/drivers">Volver a Inicio</Link>
+    </nav>
+    {driverDetail.nombre ? (
+        <div className={styles.id}>
+            <div>
+                <img alt={driverDetail.nombre} src={driverDetail.imagen} className={styles.img} />
             </div>
-        ) : (
-            <div className={styles.dh1}>
-               <h1 className={styles.waveAnimation} >Cargando 🚀...</h1>
-               </div>
-        )}
+            <div className={styles.des}>
+                <h2>{driverDetail.nombre} {driverDetail.apellido}</h2>
+                <p className={styles.desPi}>Fecha de Nacimiento</p>
+                <p>{driverDetail.fechaNacimiento}</p>
+                <p className={styles.desPi}>Nacionalidad</p>
+                <p>{driverDetail.nacionalidad}</p>
+                <p className={styles.desPi}>Descripcion</p>
+                <p>{driverDetail.descripcion}</p>
+                <p className={styles.desPi}>Equipos</p>
+                <p>{driverDetail.teams}</p>
+            </div>
         </div>
+    ) : (
+        <div className={styles.dh1}>
+            <h1 className={styles.waveAnimation}>Cargando 🚀...</h1>
+        </div>
+    )}
+</div>
+
     );
 }
 

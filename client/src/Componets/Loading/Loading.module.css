@@ -1,10 +1,12 @@
         .p{
             color:white;
-            margin-top: -500px;
-            margin-left: -30px;
+          
+
+            font-size: 40px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
         }
         .body {
-            background: black;
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -12,17 +14,32 @@
             width: 222vh;
             margin: 0;
             margin-top: -30px;
-          
+            margin-left: -290px;
         }
 
         .container {
             perspective: 1000px;
             perspective-origin: 50% 50%;
             padding-left: 60px;
+            background-color: blueviolet;
+            
+        }
+
+        .pi {
+             font-size: 30px;
+             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              
+                margin-top: -500px;
+                margin-left: -3vw;
+                font-weight: 900;
+                color: white;
+                
+            
         }
 
         .loop {
             transform: rotateX(-35deg) rotateY(-45deg) translateZ(1-1.5625em);
+            background-color: red;
         }
 
         @keyframes rotate {

@@ -58,7 +58,7 @@ else if(actualPage !== 1 && index >= ((actualPage-1)*9)-1 && (index < (actualPag
 
                             />)
               }
-             }): <h1> Cargando</h1>}
+             }): <Loading />}
             </div>
 
 

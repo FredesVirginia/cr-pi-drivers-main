@@ -15,7 +15,7 @@ const Loading = () => {
             <div className={styles.item}></div>
         </div>
     </div>
-      <p className={styles.p}>Cargando ...</p>
+      <p className={styles.pi}>Cargando ...</p>
        </div>
     );
 }
