@@ -73,6 +73,23 @@ export default function reducer( state = initialState, action){
                 }
             }
 
+            case "DELETE_DRIVER_BBDD" : {
+                return {
+                    ...state,
+                    actualPage:1,
+                    drivers: action.payload
+                }
+            }
+
+             case "DELETE_DRIVER_API" : {
+                const filterDrivers= state.drivers.filter((driver)=> driver.id !== action.payload);
+                return {
+                    ...state,
+                    actualPage:1,
+                    drivers: filterDrivers
+                }
+            }
+
             case "MENOR_EDAD" : {
                
                 return {

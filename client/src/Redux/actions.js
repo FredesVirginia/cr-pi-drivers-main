@@ -79,6 +79,33 @@ import axios from "axios";
         }
     }
 
+    export function deleteDriver(id){
+        console.log("EL id del delete de action" , id)
+          
+            let ide = id.toString().includes("-");
+           if(ide){
+             return async function (dispatch){
+                try{
+                const response = await axios.delete(`http://localhost:3001/drivers/borrar/${id}`);
+                console.log("DRIVERS BORRADO" , response.status);
+                dispatch({
+                    type: "DELETE_DRIVER_BBDD",
+                    payload : response.data
+                })
+                }catch(error){
+                    console.log("Error en delete action" , error)
+                }
+             }
+           } else{
+              return function(dispatch) {
+                dispatch({ 
+                    type: "DELETE_DRIVER_API",
+                    payload : id
+              })
+           }
+        }
+    }
+
 
    
 

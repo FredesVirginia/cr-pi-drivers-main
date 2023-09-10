@@ -78,8 +78,9 @@ router.post("/crear" , async(req, res)=>{
     }
 
     let img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf5ZMbjfXHe6oxIvGejyVSkjYrPZehfMVTPxTQycgs-8ZiWiumHH5L6PA7ULosAK9iR5I&usqp=CAU";
+    let createDb= true;
     // Crear el examen
-    const driver = await Driver.create({ nombre, apellido,descripcion,  img, nacionalidad, fechaNacimiento });
+    const driver = await Driver.create({ nombre, apellido,descripcion,  img, nacionalidad, fechaNacimiento , createDb });
 
     // Asociar el examen a los temas correspondientes
     await driver.setTeams(teamsEncontrados);
@@ -155,6 +156,27 @@ router.put("/editar/:id", async (req, res) => {
   }
 });
 
+router.delete("/borrar/:id" , async (req , res) =>{
+  try{
+
+    const {id} = req.params;
+    console.log("EL id es ", id);
+    let driverDelete = await Driver.findByPk(id);
+    if(!driverDelete){
+      res.status(404). send("No se encontro el driver del delete");
+    }
+    else{
+      await driverDelete.destroy();
+      console.log("Se logro");
+      const respuesta = await getAllDriver();
+      res.status(200).json(respuesta);
+    }
+
+  }catch(error){
+    console.log("El error fue  en delete" , error );
+    res.status(500);
+  }
+})
 
 
 
