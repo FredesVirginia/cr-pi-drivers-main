@@ -56,6 +56,7 @@ async function readBBDD (){
                nombre: d.nombre,
                apellido : d.apellido,
                nombreCompleto : d.nombre + ' ' + d.apellido,
+               imagen : d.imagen,
                descripcion: d.descripcion,
                nacionalidad : d.nacionalidad,
                fechaNacimiento: d.fechaNacimiento,

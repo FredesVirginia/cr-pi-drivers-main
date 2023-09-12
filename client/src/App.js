@@ -6,6 +6,8 @@ import DriverId from "./Componets/DriverId/DriverId";
 import Form from "./Componets/CreateDriver/Form";
 import UpdateDriver from './Componets/UpdateDriver/UpdateDriver';
 import "./App.css";
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001/";
 const App = () => {
     return (
         <div >

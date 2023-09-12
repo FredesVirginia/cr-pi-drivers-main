@@ -3,7 +3,7 @@ import axios from "axios";
     export function getAllDrivers(){
         return async function (dispatch){
             try{
-                const allDrivers = await axios.get("http://localhost:3001/drivers/");
+                const allDrivers = await axios.get("/drivers/");
                 return dispatch ({
                     type: "GET_ALL_DRIVERS",
                     payload: allDrivers.data
@@ -19,7 +19,7 @@ import axios from "axios";
         return async function (dispatch){
             try{
                 console.log("El nombre desde action name es " , nombre);
-                const allDrivers = await axios.get(`http://localhost:3001/drivers/nombre/?nombre=${nombre}` );
+                const allDrivers = await axios.get(`/drivers/nombre/?nombre=${nombre}` );
                 return dispatch ({
                     type: "GET_FOR_NAME_DRIVERS",
                     payload: allDrivers.data

@@ -71,6 +71,8 @@ const Form = () => {
 
                   const genresString = spacedGenres.join(",");
                
+    
+
                   setDataForm({
                       ...dataForm,
                       teams: genresString,
@@ -205,7 +207,7 @@ const Form = () => {
              </div>
              <div  className={styles.inputGroup}>
                 <input 
-                        type='text'
+                        type='date'
                         id="fechaNacimiento"
                         onChange={setDataHandler}
                        value={dataForm.fechaNacimiento}
