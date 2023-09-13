@@ -15,19 +15,45 @@ import axios from "axios";
         }
     }
 
-    export function getForNameDrivers(nombre){
-        return async function (dispatch){
-            try{
-                console.log("El nombre desde action name es " , nombre);
-                const allDrivers = await axios.get(`/drivers/nombre/?nombre=${nombre}` );
-                return dispatch ({
-                    type: "GET_FOR_NAME_DRIVERS",
-                    payload: allDrivers.data
-                })
-                
-            }catch(error){
-                console.log("Error desde action NAME", error);
+    export function getForNameDrivers(nombre) {
+        return async function (dispatch) {
+          try {
+            console.log("El nombre desde action name es ", nombre);
+            const response = await axios.get(`/drivers/nombre/?nombre=${nombre}`);
+      
+            if (response.status === 200) {
+              return dispatch({
+                type: "GET_FOR_NAME_DRIVERS",
+                payload: {
+                  data: response.data,
+                  status: response.status,
+                },
+              });
+            } else {
+              // Utiliza throw para lanzar una excepción personalizada con el status
+              throw new Error(response.status.toString());
             }
+          } catch (error) {
+            console.error("Error desde action NAME", error);
+      
+            // Lanzar un nuevo error personalizado
+            throw new Error('Error en la solicitud');
+          }
+        };
+      }
+
+
+    export function driverNotFound(){
+        return {
+            type: "DRIVER_NOT_FOUND",
+            payload : true
+        }
+    }
+
+    export function driverFound(){
+        return {
+            type: "DRIVER_FOUND",
+            payload : false
         }
     }
 

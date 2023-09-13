@@ -33,10 +33,13 @@ router.get("/nombre"  , async (req, res) =>{
                 return element;
             }
         });
-      if(responseName){
+        console.log("EL drivere en el back es " , responseName);
+      if(responseName.length !== 0 ){
+        console.log("POR EL 202");
         res.status(200).json(responseName);
       }else{
-        res.status(404).send("NO se encontro el nombre");
+        console.log("POR EL 4040");
+        res.status(404).send("No se encontro el Driver");
       }
         
    

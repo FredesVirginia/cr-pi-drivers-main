@@ -7,6 +7,7 @@ const initialState = {
     drivers: [],
     teams : [], 
     driverId: {},
+    driverNootFound : false , 
     actualPage: 1
     
 }
@@ -35,6 +36,25 @@ export default function reducer( state = initialState, action){
                 }
             }
 
+            case "DRIVER_NOT_FOUND" : {
+                console.log("el redux de DRIVER NOT FOUND ES " , action.payload);
+                return {
+                    ...state,
+                    driverNootFound: action.payload,
+                    actualPage:1,
+                }
+            }
+
+            case  "DRIVER_FOUND": {
+                console.log("el redux de DRIVER NOT FOUND ES " , action.payload);
+                return {
+                    ...state,
+                    driverNootFound: action.payload,
+                    actualPage:1,
+                }
+            }
+            
+
             case "GET_ALL_TEAMS" : {
                 return {
                     ...state,
@@ -62,7 +82,7 @@ export default function reducer( state = initialState, action){
                 return {
                     ...state,
                     actualPage:1,
-                    drivers: action.payload
+                    drivers: action.payload.data
                 }
             }
 

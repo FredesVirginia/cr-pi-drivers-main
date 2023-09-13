@@ -1,66 +1,81 @@
 import React  , {useState, useRef, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import { getAllTeams , getDriverforTeams , getAllDrivers , getForNameDrivers , menorEdad , mayorEdad} from "../../Redux/actions";
+import { getAllTeams , getDriverforTeams , getAllDrivers , 
+driverNotFound, getForNameDrivers , menorEdad , driverFound ,  mayorEdad} from "../../Redux/actions";
 
 import styles from "./Nav.module.css";
 import {Link} from "react-router-dom";
 
 const Nav = () => {
- const dispatch = useDispatch();
- const allTeams = useSelector( state => state.teams);
- const allDrivers = useSelector (state => state.drivers);
- const [teams , setTeams] = useState(" ");
- const [cambio , setCambio] = useState(" ");
- const [nombre , setNombre] = useState("");
-  const [order, setOrder] = useState(" ");
-
   
- useEffect(() => {
-  const fetchData = async () => {
-        if (teams !== " ") {
-          await dispatch(getDriverforTeams(teams));
+    const dispatch = useDispatch();
+    const allTeams = useSelector( state => state.teams);
+    const allDrivers = useSelector (state => state.drivers);
+    const notFound = useSelector (state => state. driverNootFound);
+     console.log("El driver not fournd tiene valor de  1" , notFound);
+    const [teams , setTeams] = useState(" ");
+    const [cambio , setCambio] = useState(" ");
+    const [nombre , setNombre] = useState("");
+     const [order, setOrder] = useState(" ");
+   
+     
+         useEffect(() => {
+     const fetchData = async () => {
+           if (teams !== " ") {
+             await dispatch(getDriverforTeams(teams));
+           }
+           
+           if(teams ==="inicio") {
+            await dispatch(getAllDrivers());
+             
+             
+           }
+           // Aquí puedes enviar toda la información al componente
+        };
+   
+         fetchData();
+            }, [dispatch, teams]);
+   
+         useEffect(() => {
+           
+             // Aquí puedes enviar toda la información al componente
+           dispatch(getAllTeams());
+         
+            }, [dispatch]);
+   
+         useEffect(() => {
+           if (order === "inicio"){
+             dispatch(getAllDrivers());
+           }
+           if(order ==="ascFechaNacimiento"){
+               dispatch(mayorEdad())
+           }
+           if(order === "desFechaNacimiento"){
+             dispatch(menorEdad(allDrivers))
+           }
+   
+           
+        }, [dispatch , order , allDrivers]);
+   
+   
+        async function handleChange(e) {
+          e.preventDefault();
+          setNombre(e.target.value);
+          try {
+            const res = await dispatch(getForNameDrivers(e.target.value));
+           await  dispatch(driverFound());
+            // Si la solicitud fue exitosa, res será la respuesta normal
+            setNombre("");
+          } catch (error) {
+            console.log("Por aquí en el status 404");
+            setNombre("");
+            await dispatch(driverNotFound());
+            // Aquí puedes acceder al status si lo necesitas
+            console.log("Status de error:", error.message);
+          }
         }
-        
-        if(teams ==="inicio") {
-         await dispatch(getAllDrivers());
           
-          
-        }
-        // Aquí puedes enviar toda la información al componente
-     };
-
-      fetchData();
-    }, [dispatch, teams]);
-
-      useEffect(() => {
-        
-          // Aquí puedes enviar toda la información al componente
-        dispatch(getAllTeams());
-      
-      }, [dispatch]);
-
-      useEffect(() => {
-        if (order === "inicio"){
-          dispatch(getAllDrivers());
-        }
-        if(order ==="ascFechaNacimiento"){
-            dispatch(mayorEdad())
-        }
-        if(order === "desFechaNacimiento"){
-          dispatch(menorEdad(allDrivers))
-        }
-
-        
-     }, [dispatch , order , allDrivers]);
-
-
-        function handleChange(e){
               
-              e.preventDefault();
-                setNombre(e.target.value);
-                dispatch(getForNameDrivers(e.target.value));
-                setNombre ("");
-            }
 
        
 
@@ -94,7 +109,7 @@ const Nav = () => {
             <div className={styles.divBreed}>
             
             <Link to="/" className={styles.formLink} > Drivers </Link>
-            <input className={styles.buscar}  type="text" onChange={ handleChange}  placeholder="Look For Driver " /> 
+            <input className={styles.buscar}  type="text" onChange={handleChange}  placeholder="Look For Driver " /> 
             
             </div>
 
@@ -117,6 +132,8 @@ const Nav = () => {
 
             </div>
           
+
+
          </div>
     );
 }
