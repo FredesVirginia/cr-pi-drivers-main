@@ -43,6 +43,39 @@ import axios from "axios";
       }
 
 
+     export function getAllDriverAPI(){
+        return async function(dispatch){
+            try{
+                let allVideogames = await axios.get("http://localhost:3001/drivers");
+                let respuesta = allVideogames.data.filter((game) =>  {return  game.createBBDD === false});
+                console.log("Reustas deste action getGameApi", respuesta)
+                dispatch({
+                    type: "GET_ALL_DRIVERS_API",
+                    payload : respuesta
+                 })
+            }catch(error){
+                console.log("Error desde action getGameApi" , error);
+            }
+        }
+    }
+
+    export function getAllDriversBBDD(){
+        return async function(dispatch){
+            try{
+                let allVideogames = await axios.get("http://localhost:3001/drivers");
+                let respuesta = allVideogames.data.filter((game) =>  {return  game.createBBDD === true});
+                console.log("Reustas deste action getGameApi", respuesta)
+                dispatch({
+                    type: "GET_ALL_DRIVERS_BBDD",
+                    payload : respuesta
+                 })
+            }catch(error){
+                console.log("Error desde action getGameApi" , error);
+            }
+        }
+    }
+
+
     export function driverNotFound(){
         return {
             type: "DRIVER_NOT_FOUND",

@@ -27,7 +27,7 @@ const Form = () => {
     },[dispatch]);
 
     const setDataHandler = (e) => {
-      const { id, value } = e.target;
+      const { id,  value } = e.target;
       // Copia el estado actual y actualiza el valor del campo correspondiente
       setDataForm((prevState) => ({
         ...prevState,
@@ -38,7 +38,10 @@ const Form = () => {
       setError((prevError) => ({
         ...prevError,
         [id]: "",
-      }));
+          
+      })
+    
+      );
     };
     
 
@@ -52,7 +55,7 @@ const Form = () => {
 
             setError({
               ...error,
-              genero: ""
+              teams:""
             });
               };
 
@@ -78,11 +81,16 @@ const Form = () => {
                       teams: genresString,
                      
                      });
-    
-                     setError({
-                      ...error,
+
+                     setError((prevError) => ({
+                      ...prevError,
                       [e.target.name] : ""
-                  })
+                        
+                    })
+                  
+                    );
+    
+                     
                 };
 
                 const submitForm = (e) => {
@@ -223,7 +231,7 @@ const Form = () => {
                         onChange={setDataHandler}
                         value={dataForm.descripcion}
                         ></textarea>
-                {error.descripcion && (<h6  className={styles.error} >{error.descripcion}</h6>)}
+                {error.descripcion && (<h6  className={styles.error1} >{error.descripcion}</h6>)}
               </div>
 
               <div >

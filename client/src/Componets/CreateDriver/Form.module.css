@@ -66,6 +66,15 @@ h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.error1{
+    color:red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+
+
 
 
 
@@ -101,7 +110,7 @@ h1{
 .containerForm{
     background: url("../../../src/Img/f11.jpg") no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
+    height: 200vh;
     
 }
 

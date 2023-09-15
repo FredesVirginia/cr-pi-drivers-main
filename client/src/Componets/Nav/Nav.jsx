@@ -1,7 +1,7 @@
 import React  , {useState, useRef, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import { getAllTeams , getDriverforTeams , getAllDrivers , 
-driverNotFound, getForNameDrivers , menorEdad , driverFound ,  mayorEdad} from "../../Redux/actions";
+driverNotFound, getForNameDrivers , menorEdad , driverFound ,  mayorEdad , getAllDriversBBDD  , getAllDriverAPI} from "../../Redux/actions";
 
 import styles from "./Nav.module.css";
 import {Link} from "react-router-dom";
@@ -53,6 +53,15 @@ const Nav = () => {
            if(order === "desFechaNacimiento"){
              dispatch(menorEdad(allDrivers))
            }
+
+            if(order ==="driverApi"){
+               dispatch(getAllDriverAPI())
+           }
+           if(order === "driverBBDD"){
+             dispatch(getAllDriversBBDD())
+           }
+
+
    
            
         }, [dispatch , order , allDrivers]);

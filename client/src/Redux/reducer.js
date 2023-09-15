@@ -28,6 +28,24 @@ export default function reducer( state = initialState, action){
                 }
             }
 
+            case "GET_ALL_DRIVERS_API": {
+                return {
+                    ...state,
+                    
+                    drivers: action.payload
+                }
+            }
+
+             case "GET_ALL_DRIVERS_BBDD": {
+                return {
+                    ...state,
+                    
+                    drivers: action.payload
+                }
+            }
+
+
+
             case "GET_DRIVER_FOR_ID" : {
                 return {
                     ...state,
