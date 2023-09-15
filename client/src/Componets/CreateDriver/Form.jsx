@@ -85,86 +85,83 @@ const Form = () => {
                   })
                 };
 
-                const submitForm = (e)=>{
+                const submitForm = (e) => {
                   e.preventDefault();
-                  let estadoForm = false;
+                  let estadoForm = true;
+                  let isEmpty = false;
                   if (dataForm.nombre.length === 0) {
                     setError((prevError) => ({
                       ...prevError,
                       nombre: "Campo requerido",
                     }));
-                    estadoForm = false;
-                  } 
-                   if (dataForm.apellido.length === 0) {
+                    isEmpty = true;
+                  }
+                  if (dataForm.apellido.length === 0) {
                     setError((prevError) => ({
                       ...prevError,
                       apellido: "Campo requerido",
                     }));
+                    isEmpty = true;
                   }
-                
-                   if(dataForm.nacionalidad.length === 0 ){
+                  if (dataForm.nacionalidad.length === 0) {
                     setError((prevError) => ({
                       ...prevError,
                       nacionalidad: "Campo requerido",
                     }));
-                    estadoForm= false
-                  }  if ((dataForm.fechaNacimiento.length === 0) ){
+                    isEmpty = true;
+                  }
+                  if (dataForm.fechaNacimiento.length === 0) {
                     setError((prevError) => ({
                       ...prevError,
                       fechaNacimiento: "Campo requerido",
                     }));
-                    estadoForm = false
-                  }  if(dataForm.teams.length === 0){
-                     setError((prevError) => ({
+                    isEmpty = true;
+                  }
+                  if (dataForm.teams.length === 0) {
+                    setError((prevError) => ({
                       ...prevError,
                       teams: "Campo requerido",
                     }));
-                    estadoForm = false
-                  } 
-                   if(dataForm.descripcion.length === 0){
+                    isEmpty = true;
+                  }
+                  if (dataForm.descripcion.length === 0) {
                     setError((prevError) => ({
                       ...prevError,
                       descripcion: "Campo requerido",
                     }));
-                    estadoForm = false
+                    isEmpty = true;
                   }
-                  
-                  else {
-                    estadoForm = true
+                
+                  if (isEmpty) {
+                    estadoForm = false;
                   }
-      
-                  
-                  
-                   if(estadoForm){
-                    console.log("Losteams desde el FORMULARION SON" , dataForm.teams);
+                
+                  if (estadoForm) {
+                    console.log("Losteams desde el FORMULARION SON", dataForm.teams);
                     dispatch(createDriver(dataForm));
                     setDataForm({
                       nombre: "",
                       apellido: "",
-                      nacionalidad : "",
-                      fechaNacimiento :  "",
-                      descripcion : "",
-                     
-                      teams : "",
-                      
+                      nacionalidad: "",
+                      fechaNacimiento: "",
+                      descripcion: "",
+                      teams: "",
                     });
                     setSelectedOptions([]);
-                    
+                
                     Swal.fire({
-                      title: 'Se creó exitosamente', // Aquí puedes usar HTML personalizado
-                      icon: 'success',
-                      confirmButtonColor: "#34a57f"  
-                    }
-                  ) 
-                   }else{
+                      title: "Se creó exitosamente", // Aquí puedes usar HTML personalizado
+                      icon: "success",
+                      confirmButtonColor: "#34a57f",
+                    });
+                  } else {
                     Swal.fire({
-                      title : 'Error en los datos ',
-                     
-                      confirmButtonColor: "#ff5733"
-                    }); 
-                   }
-                 
-                }
+                      title: "Error en los datos ",
+                
+                      confirmButtonColor: "#ff5733",
+                    });
+                  }
+                };
     return (
         <div  className={styles.containerForm} >
          <nav> 

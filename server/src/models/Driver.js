@@ -15,23 +15,24 @@ module.exports = (sequelize) => {
        createBBDD: {
       type: DataTypes.BOOLEAN,
       default: true,
+
       },
 
    
 
     nombre: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
 
     apellido: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
 
     imagen: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
 
     descripcion : {
@@ -41,12 +42,12 @@ module.exports = (sequelize) => {
 
     nacionalidad : {
       type: DataTypes.STRING ,
-      allowNull : true,
+      allowNull: false,
     }
     ,
     fechaNacimiento: {
         type: DataTypes.TEXT ,
-        allowNull : true,
+        allowNull: false,
       }
 
 

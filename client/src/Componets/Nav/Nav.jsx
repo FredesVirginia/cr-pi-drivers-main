@@ -59,20 +59,20 @@ const Nav = () => {
    
    
         async function handleChange(e) {
-          e.preventDefault();
-          setNombre(e.target.value);
-          try {
-            const res = await dispatch(getForNameDrivers(e.target.value));
-           await  dispatch(driverFound());
-            // Si la solicitud fue exitosa, res será la respuesta normal
-            setNombre("");
-          } catch (error) {
-            console.log("Por aquí en el status 404");
-            setNombre("");
-            await dispatch(driverNotFound());
-            // Aquí puedes acceder al status si lo necesitas
-            console.log("Status de error:", error.message);
-          }
+              e.preventDefault();
+              setNombre(e.target.value);
+              try {
+                const res = await dispatch(getForNameDrivers(e.target.value));
+              await  dispatch(driverFound());
+              
+                setNombre("");
+              } catch (error) {
+                console.log("Por aquí en el status 404");
+                setNombre("");
+                await dispatch(driverNotFound());
+            
+                console.log("Status de error:", error.message);
+              }
         }
           
               

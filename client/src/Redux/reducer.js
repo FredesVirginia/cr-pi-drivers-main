@@ -66,7 +66,7 @@ export default function reducer( state = initialState, action){
             case "GET_DRIVER_FOR_TEAMS" : {
                 return {
                     ...state,
-                    actualPage:1,
+                  
                     drivers: action.payload
                 }
             }
@@ -89,14 +89,14 @@ export default function reducer( state = initialState, action){
             case "UPDATE_DRIVER": {
                 return {
                     ...state,
-                    actualPage:1,
+                   
                 }
             }
 
             case "DELETE_DRIVER_BBDD" : {
                 return {
                     ...state,
-                    actualPage:1,
+                   
                     drivers: action.payload
                 }
             }
@@ -105,7 +105,7 @@ export default function reducer( state = initialState, action){
                 const filterDrivers= state.drivers.filter((driver)=> driver.id !== action.payload);
                 return {
                     ...state,
-                    actualPage:1,
+                  
                     drivers: filterDrivers
                 }
             }
@@ -114,7 +114,7 @@ export default function reducer( state = initialState, action){
                
                 return {
                     ...state ,
-                    actualPage:1,
+                   
                     drivers :state.drivers.slice().sort(edadMin)
                 }
             
@@ -123,7 +123,7 @@ export default function reducer( state = initialState, action){
             case "MAYOR_EDAD" : {
                 return {
                     ...state,
-                    actualPage:1,
+                  
                     drivers: state.drivers.slice().sort(edadMax)
                 }
             }

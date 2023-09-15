@@ -18,3 +18,38 @@
      font-weight: 700;
      margin: 4px;
  }
+
+
+ .botonP:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Clase para resaltar la página seleccionada en verde */
+  .selectedPage {
+    background-color: rgb(60, 0, 255); /* Cambia el color de fondo a verde */
+    color: black;/* Cambia el color del texto a blanco */
+    font-weight: bold; /* Puedes agregar negrita para destacar más */
+
+    list-style: none;
+    border:none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.727);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 4px;
+  }
+  
+  /* Clase para las demás páginas */
+  .page {
+    background-color: #ffffff; /* Fondo blanco para las demás páginas */
+    color: #000000;
+    list-style: none;
+    border:none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.727);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 4px;
+  }
+  
+  .page:hover {
+    background-color: #f0f0f0;
+  }

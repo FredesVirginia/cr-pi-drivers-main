@@ -14,8 +14,9 @@ import styles from "./DriverContainer.module.css";
 const DriverContainer = () => {
     const actualPage = useSelector(state=>state.actualPage);
     const allDriver = useSelector(state =>state.drivers);
-    const [showAlert, setShowAlert] = useState(false);
+   
     const driverNotFound = useSelector((state) => state.driverNootFound);
+    console.log("Los dirvers son " , allDriver);
     const dispatch = useDispatch();
     useEffect(() => {
         const fetchData = async () => {
@@ -40,8 +41,8 @@ const DriverContainer = () => {
         <div className={styles.containerDriver}>
           {driverNotFound === true? (
             <div>
-                 <p>No se encontraron conductores con ese nombre.</p>
-                <button onClick={handleClick}>Volver al Inicio</button>
+                 <p className={styles.pNot} >No se encontraron conductores con ese nombre.</p>
+                <button className={styles.bNot}  onClick={handleClick}>Volver al Inicio</button>
             </div>
           ) : allDriver.length > 0 ? (
             allDriver.map((driver, index) => {
